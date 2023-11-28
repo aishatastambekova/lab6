@@ -1,0 +1,60 @@
+lab 6.2 
+6
+def get_unique_elements_with_count(input_list):
+    unique_elements_count = {}
+    
+    for item in input_list:
+        if item in unique_elements_count:
+            unique_elements_count[item] += 1
+        else:
+            unique_elements_count[item] = 1
+    
+    return unique_elements_count
+
+my_list = [1, 2, 3, 1, 2, 4, 1, 2]
+result = get_unique_elements_with_count(my_list)
+print(result)
+
+lab 6
+7
+def get_prime_numbers(n):
+    prime_numbers = []
+
+    for num in range(2, n + 1):
+        is_prime = True
+        for i in range(2, int(num**0.5) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            prime_numbers.append(num)
+
+    return prime_numbers
+8
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def get_prime_numbers_in_list(input_list):
+    prime_numbers = [num for num in input_list if is_prime(num)]
+    return prime_numbers
+
+
+9
+from datetime import datetime
+
+def get_difference_between_dates(date1, date2):
+    date1_obj = datetime.strptime(date1, '%Y.%m.%d')
+    date2_obj = datetime.strptime(date2, '%Y.%m.%d')
+
+    difference = (date2_obj - date1_obj).days
+
+    return difference
+
+
+

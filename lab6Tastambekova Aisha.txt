@@ -1,0 +1,63 @@
+lab6.1
+
+def get_keys_with_value_true(input_dict):
+    return [key for key, value in input_dict.items() if value is True]
+
+my_dict = {
+    "a": True,
+    "b": False,
+    "c": True,
+}
+
+result = get_keys_with_value_true(my_dict)
+print(result)
+
+lab6.2
+def get_unique_elements(input_list):
+    element_count = {}
+    
+    
+    for item in input_list:
+        element_count[item] = element_count.get(item, 0) + 1
+
+    
+    unique_elements = [key for key, value in element_count.items() if value == 1]
+
+    return unique_elements
+
+my_list = [1, 2, 3, 1, 2, 4]
+result = get_unique_elements(my_list)
+print(result)
+
+lab6.3
+def get_date_in_format(date):
+   
+    year, month, day = map(int, date.split('.'))
+    
+    formatted_date = f"{day:02d}.{month:02d}.{year}"
+  
+    return formatted_date
+input_date = "2023.10.23"
+output_date = get_date_in_format(input_date)
+print(output_date)
+
+lab6.4
+def get_elements_with_no_more_than_two_occurrences(input_list):
+    result = [item for item in set(input_list) if input_list.count(item) <= 2]
+    return result
+
+
+my_list = [1, 2, 3, 1, 2, 4]
+result = get_elements_with_no_more_than_two_occurrences(my_list)
+print(result)
+
+lab6.5
+def get_words_from_string(input_string):
+    words_list = input_string.split()
+    return words_list
+
+input_string = "This is a string with several words."
+result = get_words_from_string(input_string)
+print(result)
+
+

@@ -1,0 +1,25 @@
+11
+
+def is_perfect_square(num):
+    return int(num**0.5)**2 == num
+
+def are_all_perfect_squares(input_list):
+    return all(is_perfect_square(num) for num in input_list)
+
+my_list = [4, 25, 81]
+result = are_all_perfect_squares(my_list)
+print(result)
+
+12
+def sort_by_price(shopping_list):
+    sorted_list = sorted(shopping_list, key=lambda x: x['price'])
+    return sorted_list
+
+
+shopping_list = [
+    {"name": "Apple", "price": 100},
+    {"name": "Banana", "price": 50},
+    {"name": "Orange", "price": 20}
+]
+result = sort_by_price(shopping_list)
+print(result)
